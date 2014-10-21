@@ -9,7 +9,8 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks
     if @task.save
       current_user.tasks.create(task_params)
-      redirect_to tasks_path
+      
+      render @task
     else
       render :index
     end
