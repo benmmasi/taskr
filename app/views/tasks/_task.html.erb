@@ -1,3 +1,7 @@
 <li>
-<strong><%= task.title %></strong>--<%= task.description %><%= button_to "Complete",
+<strong><%= task.title %></strong>--<%= task.description %>
+<%= form_for task do |form| %>
+  <%= form.hidden_field :completed, value: 1 %>
+  <%= form.submit "Complete Task" %>
+<% end %>
 </li>
