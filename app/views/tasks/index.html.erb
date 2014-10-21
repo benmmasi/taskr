@@ -1,4 +1,20 @@
 <h1>Here are your tasks pal!</h1>
 
+<%= form_for @task do |form| %>
+  <div>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+</div>
+
+<div>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+</div>
+
+<div>
+  <%= form.submit "Create Task" %>
+</div>
+<% end %>
+
 <ul><%= render @tasks %>
 </ul>
