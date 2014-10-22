@@ -17,5 +17,10 @@
 </div>
 <% end %>
 
-<ul id="taskList"><%= render @tasks %>
+<h2>Incomplete Tasks</h2>
+<ul id="incomplete-task-list"><%= render @incomplete_tasks %>
+</ul>
+
+<h2>Completed Tasks</h2>
+<ul id="complete-task-list"><%= render @complete_tasks %>
 </ul>
