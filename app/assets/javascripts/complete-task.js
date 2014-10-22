@@ -1,7 +1,7 @@
 $(function() {
   var completeTaskForm = $("form.edit_task");
 
-  var completeTaskDataFromServer = function() {
+  var updateTaskDataFromServer = function() {
     var theElement = $(this);
     var taskData = $(this).serialize();
     var conversation = $.ajax({
@@ -10,11 +10,12 @@ $(function() {
         data: taskData
     });
 
-   $(this).parents("li").fadeOut();
+   $(this).parents("li").fadeOut().hide(400).appendTo("#complete-task-list").fadeIn();
+
    return false
 
   };
 
-  $("body").on("submit", "form.edit_task", completeTaskDataFromServer);
+  $("body").on("submit", "form.edit_task", updateTaskDataFromServer);
 
 });
