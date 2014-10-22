@@ -1,5 +1,7 @@
 <h1>Here are your tasks pal!</h1>
 
+<div id="errors"></div>
+
 <%= form_for @task do |form| %>
   <%= render "error_messages", target: @task %>
 <div>
@@ -15,6 +17,7 @@
 <div>
   <%= form.submit "Create Task" %>
 </div>
+
 <% end %>
 
 <h2>Incomplete Tasks</h2>
