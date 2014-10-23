@@ -18,7 +18,7 @@ $(function() {
   var onComplete = function(html) {
     var completeList = $("#complete-task-list");
     var completedItem = $(html).hide();
-    completeList.append(completedItem);
+    completeList.prepend(completedItem);
     completedItem.fadeIn();
   };
 
