@@ -10,11 +10,18 @@ $(function() {
         data: taskData
     });
 
-   $(this).parents("li").fadeOut().hide(400).appendTo("#complete-task-list").fadeIn();
-
-   return false
-
+   $(this).parents("li").fadeOut();
+   conversation.done(onComplete);
+   return false;
   };
+
+  var onComplete = function(html) {
+    var completeList = $("#complete-task-list");
+    var completedItem = $(html).hide();
+    completeList.append(completedItem);
+    completedItem.fadeIn();
+  };
+
 
   $("body").on("submit", "form.edit_task", updateTaskDataFromServer);
 
